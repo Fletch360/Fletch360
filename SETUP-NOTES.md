@@ -28,3 +28,12 @@ Mac mini as a server and alternate storage hub: files land in an inbox, then get
 - Audio formats wanted?
 - What is Brax* and where does it live?
 - Volume rename (`WD 1Tb Apple` to `HUB`)? Optional.
+
+## Hardware facts (from the Mac mini)
+- Internal: APPLE SSD SM0256G, 250.79 GB APFS, about 50.7 GB free. SMART verified. Keep only scripts/config here.
+- External: WD Elements SE (USB), 1 TB, Journaled HFS+, Apple Partition Map, about 686 GB free, "Ignore Ownership: Yes". Hub lives here. Scripts must check the volume is mounted before acting.
+
+## Plan
+- Now (Mac mini, macOS 12): SSH, Tailscale, SMB share, ffmpeg, launchd watcher, Notion job-queue agent. No Docker/Portainer (unsupported on this macOS).
+- Later (new hardware): Docker + Portainer, containerize the watcher, add services (Syncthing, Uptime Kuma, Filebrowser). Migrate with git clone + rsync.
+- Notion stays as the human-facing job queue/approvals; Portainer is only infra management.
