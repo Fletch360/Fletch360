@@ -8,7 +8,7 @@ Mac mini as a server and alternate storage hub: files land in an inbox, then get
 ## Machines
 | Machine | Status |
 |---|---|
-| Mac mini (`Waynes-Mac-mini`, user `waynefletcher`) | Intel (Homebrew refuses to install). Remote Login (SSH) ON. Tailscale signed in. Terminal, VS Code, Termius installed. |
+| Mac mini (`Waynes-Mac-mini`, user `waynefletcher`) | Intel x86_64, macOS 12.7.6 Monterey. Homebrew unsupported here. Claude Code likely needs macOS 13+, so run agents from Windows PC instead. Remote Login (SSH) ON. Tailscale signed in. Terminal, VS Code, Termius installed. |
 | Windows PC | Setting up Tailscale (needs cookies on in browser for sign-in). Use `winget`, not `brew`. |
 
 ## Storage
@@ -16,7 +16,7 @@ Mac mini as a server and alternate storage hub: files land in an inbox, then get
 - Hub path: `/Volumes/WD 1Tb Apple/hub/{inbox,processing,archive,converted}`. Folders may not exist yet (check with `ls`).
 
 ## Still to do
-- [ ] ffmpeg on the Mac (no Homebrew: MacPorts or static binary)
+- [ ] ffmpeg on the Mac (no Homebrew: static binary from evermeet.cx, or MacPorts)
 - [ ] ffmpeg on Windows if needed: `winget install Gyan.FFmpeg`
 - [ ] Windows PC joined to Tailscale, SSH test to the mini
 - [ ] Decide audio formats (e.g. WAV to FLAC archive, MP3/AAC share)
