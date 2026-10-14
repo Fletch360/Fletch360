@@ -37,3 +37,8 @@ Mac mini as a server and alternate storage hub: files land in an inbox, then get
 - Now (Mac mini, macOS 12): SSH, Tailscale, SMB share, ffmpeg, launchd watcher, Notion job-queue agent. No Docker/Portainer (unsupported on this macOS).
 - Later (new hardware): Docker + Portainer, containerize the watcher, add services (Syncthing, Uptime Kuma, Filebrowser). Migrate with git clone + rsync.
 - Notion stays as the human-facing job queue/approvals; Portainer is only infra management.
+
+## Kaboratech stack vs. this Mac (macOS 12 Intel, keep OS)
+Phase 1, native on the mini (no Docker): Jellyfin (macOS 12+ per forum, verify), Navidrome (Intel macOS build, launchd, needs ffmpeg), Filebrowser Quantum (original File Browser archived 2026-09-01), ffmpeg, SMB share, Tailscale.
+Netdata: macOS docs assume Homebrew, which is unavailable here; try source install or skip.
+Phase 2, new hardware / Linux: OpenMediaVault (Debian only, replaces OS), Immich (Docker, 6 GB+ RAM, Linux strongly preferred), Pi-hole (Docker, loses per-client visibility on macOS), Portainer.
